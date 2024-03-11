@@ -31,6 +31,4 @@ urlpatterns = [
     path("request-count/reset/", RequestCountRest.as_view(), name="request-count-reset"),
 
 
-    # path('',include('apps.accounts.urls')),
-    # path('',include('apps.movies.urls'))
 ]
