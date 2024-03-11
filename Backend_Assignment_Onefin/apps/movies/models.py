@@ -3,10 +3,7 @@ import uuid
 from apps.accounts.models import AuthUser
 # Create your models here.
 
-
-
 class Movies(models.Model):
-
     title = models.CharField(max_length=300)
     description = models.TextField()
     genres = models.CharField(max_length=225)
@@ -17,7 +14,6 @@ class Movies(models.Model):
 
 
 class Collection(models.Model):
-
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     title = models.CharField(max_length=300)
     description = models.TextField()

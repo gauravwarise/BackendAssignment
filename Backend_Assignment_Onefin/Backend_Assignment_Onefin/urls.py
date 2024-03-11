@@ -23,7 +23,7 @@ from apps.movies.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register', UserRegistrationView.as_view(), name='register'),
-    path("login", LoginUser.as_view(), name="login"),
+    # path("login", LoginUser.as_view(), name="login"),
     path('movies', MovieView.as_view(), name='movies'),
     path("collection", CollectionView.as_view(), name="collection"),    
     path("collection/<str:uuid>/",CollectionView.as_view(),name="collection-details"),
