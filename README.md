@@ -173,3 +173,39 @@ No Request Body needed
     {
         "detail": "Successfully deleted."
     }
+
+## Get user request count:
+### Request
+
+`GET /request-count`
+
+
+### Response
+    {
+        "requests": 35
+    }
+
+
+## Reset user request count:
+### Request
+
+`GET /request-count/reset/`
+
+
+### Response
+    {
+        "message": "request count reset successfully"
+    }
+
+
+
+# Execute tests cases:
+## accounts app:
+
+    python manage.py test apps.accounts
+
+## movies app: 
+
+    python manage.py test apps.movies  
+
+
