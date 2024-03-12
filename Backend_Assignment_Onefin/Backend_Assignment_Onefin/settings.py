@@ -137,6 +137,9 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
 
     ],
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.IsAuthenticated'
+    ]
 }
 
 SIMPLE_JWT = {
@@ -153,12 +156,7 @@ CACHES = {
         }
     }
 }
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-#         'LOCATION': 'unique-snowflake',
-#     }
-# }
+
 
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"

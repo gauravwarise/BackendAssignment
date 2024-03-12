@@ -16,7 +16,6 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 class MovieView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
-    permission_classes = (AllowAny,)
     def get(self,request):
         context = dict()
         try:
@@ -40,7 +39,6 @@ class MovieView(APIView):
 class CollectionView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
-    permission_classes = (AllowAny,)
     def post(self, request):
         data = request.data
         collection = Collection.objects.create(
@@ -139,12 +137,16 @@ class CollectionView(APIView):
             return JsonResponse({"error": "Collection not found."}, status=status.HTTP_404_NOT_FOUND)
 
 class RequestCount(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request, *args, **kwargs):
         request_count = cache.get("request_count")
         context = {"requests": request_count}
         return JsonResponse(context, status=status.HTTP_200_OK)
 
 class RequestCountRest(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request, *args, **kwargs):
         cache.set("request_count", 0)
         context = {"message": "request count reset successfully"}
