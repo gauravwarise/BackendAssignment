@@ -26,6 +26,10 @@ Djangorestframework
     python manage.py migrate
 
 
+## Start Server
+    python manage.py runserver
+    
+
 # Authentication
 
 This project uses JWT token authentication for API requests. To authenticate API requests, include the JWT token in the Authorization header (access_token) of your HTTP requests.
@@ -200,6 +204,8 @@ No Request Body needed
 
 
 # Execute tests cases:
+## Ensure that redis is configured in your system
+
 ## accounts app:
 
     python manage.py test apps.accounts
