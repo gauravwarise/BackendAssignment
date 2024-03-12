@@ -5,17 +5,6 @@ from django.db.models import Prefetch
 from apps.movies.models import Movies
 
 class TopFavouriteGenres(object):
-    """
-    Utility class for computing the top N favorite genres from movie collections.
-
-    Methods:
-    - `top_n_genres(lst, n=3)`: Given a list of genres, returns a comma-separated string
-      containing the top N genres based on frequency.
-
-    - `top_favourite_genres_from_user_collection(collections, n=3)`: Given a queryset of user's
-      collections, retrieves the genres of associated movies and returns the top N favorite genres.
-
-    """
     @staticmethod
     def top_n_genres(lst, n=3):
         return ",".join(genre for genre, _ in Counter(lst).most_common(n))
