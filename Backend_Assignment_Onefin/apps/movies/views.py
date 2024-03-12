@@ -80,7 +80,7 @@ class CollectionView(APIView):
 
             collection_list = {"collection": serializer.data}
             favourite_genres = (
-                TopFavouriteGenres().top_favourite_genres_from_user_movie_collection(
+                TopFavouriteGenres().top_favourite_genres(
                     collections, n=3
                 )
             )

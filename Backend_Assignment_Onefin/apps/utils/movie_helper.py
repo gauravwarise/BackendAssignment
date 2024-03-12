@@ -9,7 +9,7 @@ class TopFavouriteGenres(object):
     def top_n_genres(lst, n=3):
         return ",".join(genre for genre, _ in Counter(lst).most_common(n))
 
-    def top_favourite_genres_from_user_movie_collection(self, collections, n=3):
+    def top_favourite_genres(self, collections, n=3):
         genres_list = list(chain.from_iterable(
             movie.genres.split(",") for collection in collections.prefetch_related(
                 Prefetch("movies", queryset=Movies.objects.only("genres"), to_attr="genres_movies")
