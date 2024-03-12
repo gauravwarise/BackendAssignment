@@ -48,6 +48,9 @@ The following API endpoints are available:
         "password":"Demo1.@#"
     }
 
+    Note: password should contain 8 characters,
+        contain at least one uppercase and one lowercase letter
+
 ### Response
     {
             "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwMTgxNDA5LCJpYXQiOjE3
