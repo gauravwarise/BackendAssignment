@@ -44,8 +44,8 @@ The following API endpoints are available:
 `POST /register`
 
     {
-        "username":"demo1",
-        "password":"Demo1.@#"
+        "username":"username",
+        "password":"Password"
     }
 
     Note: password should contain 8 characters,
